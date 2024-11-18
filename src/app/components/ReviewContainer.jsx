@@ -1,8 +1,10 @@
+"use client";
+
 import { FaStar } from "react-icons/fa6";
 import { FaRegStar } from "react-icons/fa";
 import { FaStarHalfAlt } from "react-icons/fa";
 
-const ScrollContainer = ({ reviews }) => {
+const ReviewContainer = ({ reviews }) => {
   return (
     <>
       <h2 className="text-center">Reviews</h2>
@@ -10,10 +12,10 @@ const ScrollContainer = ({ reviews }) => {
         {reviews.map((review, id) => (
           <li key={id} className="bg-[#EFEEFF] rounded-md h-fit w-58 grid gap-3 p-4  max-[400px]:w-44">
             <div className="grid gap-4">
-              <h2 className="text-xl">
+              <h2 className="text-xl text-black">
                 <strong>{review.reviewerName}</strong>
               </h2>
-              <p>{review.comment}</p>
+              <p className="text-black">{review.comment}</p>
             </div>
             <div className="flex gap-1 justify-self-center">
               {Array.from({ length: 5 }, (_, index) => {
@@ -34,4 +36,4 @@ const ScrollContainer = ({ reviews }) => {
   );
 };
 
-export default ScrollContainer;
+export default ReviewContainer;
