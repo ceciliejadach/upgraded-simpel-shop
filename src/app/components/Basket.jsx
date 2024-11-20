@@ -1,32 +1,8 @@
-// import BasketProductCard from "./BasketProductCard";
-// import PrimaryButton from "./PrimaryButton";
-// import Link from "next/link";
-
-// const Basket = ({ cart, updateCartQuantity }) => {
-//   const selectedProducts = cart.map((product) => `${product.id}-${product.quantity}`).join(",");
-
-//   const itemCounter = cart.reduce((total, item) => total + item.quantity, 0);
-//   return (
-//     <ul className="cart__product__list grid grid-rows-[auto] gap-4 py-2 px-1">
-//       <li>
-//         {cart.map((product) => (
-//           <BasketProductCard key={product.id} id={product.id} thumbnail={product.thumbnail} title={product.title} price={product.price} stock={product.stock} quantity={product.quantity} discountPercentage={product.discountPercentage} updateCartQuantity={updateCartQuantity} />
-//         ))}
-//       </li>
-//       <Link href={`./payment?items=${selectedProducts}`}>
-//         <PrimaryButton btnText={"Proceed to checkout"} theme="red" />
-//       </Link>
-//     </ul>
-//   );
-// };
-
-// export default Basket;
-
 import BasketProductCard from "./BasketProductCard";
 import PrimaryButton from "./PrimaryButton";
 import Link from "next/link";
 
-const Basket = ({ cart = [], updateCartQuantity }) => {
+const Basket = ({ cart, updateCartQuantity }) => {
   const selectedProducts = cart.map((product) => `${product.id}-${product.quantity}`).join(",");
   const itemCounter = cart.reduce((total, item) => total + item.quantity, 0);
 

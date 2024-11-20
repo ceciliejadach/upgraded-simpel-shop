@@ -1,5 +1,6 @@
 import PrimaryButton from "./PrimaryButton";
 const BasketProductCard = ({ id, thumbnail, title, price, stock, quantity, updateCartQuantity, discountPercentage }) => {
+  //funktion for at tilføje produkt til kurven
   const addProduct = () => {
     if (quantity < stock) {
       updateCartQuantity(id, quantity + 1);
@@ -8,11 +9,12 @@ const BasketProductCard = ({ id, thumbnail, title, price, stock, quantity, updat
     }
   };
 
+  //funktion for at fjerne produkt fra kurven
   const removeProduct = () => {
     if (quantity > 1) {
       updateCartQuantity(id, quantity - 1);
     } else {
-      updateCartQuantity(id, 0); // Fjern produktet fra kurven
+      updateCartQuantity(id, 0);
     }
   };
 

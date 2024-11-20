@@ -1,4 +1,5 @@
 "use client";
+
 import Accordionitem from "./AccordionItem";
 import { useState } from "react";
 const Accordion = ({ dimensions, warrantyInformation, shippingInformation, returnPolicy }) => {

@@ -3,11 +3,12 @@ import Image from "next/image";
 import PrimaryButton from "./PrimaryButton";
 
 const ProductCard = ({ product, addToCart }) => {
-  const { id, title, thumbnail, price, discountPercentage, stock, slug } = product;
+  const { id, title, thumbnail, price, discountPercentage, stock } = product;
 
   const discountedPrice = discountPercentage ? price - (price * discountPercentage) / 100 : null;
 
   const handleAddToCart = () => {
+    //addToCart defineres i store/cartStore og bruges i App-komponeneten
     addToCart({ ...product });
   };
   return (
