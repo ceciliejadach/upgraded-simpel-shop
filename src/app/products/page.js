@@ -1,4 +1,5 @@
-import ProductList from "../components/ProductList";
+import App from "../components/App";
+
 export default async function Page() {
   const fetchProducts = async () => {
     const response = await fetch("https://dummyjson.com/products");
@@ -17,7 +18,7 @@ export default async function Page() {
 
   return (
     <>
-      <ProductList initialProducts={products} categories={categories} />
+      <App initialProducts={products} categories={categories} />
     </>
   );
 }

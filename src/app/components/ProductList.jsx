@@ -1,11 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
-import Image from "next/image";
 import ProductCard from "./ProductCard";
 
-const ProductList = ({ initialProducts, categories }) => {
+const ProductList = ({ initialProducts, categories, addToCart }) => {
   const [products, setProducts] = useState(initialProducts);
   const [filter, setFilter] = useState("all");
 
@@ -22,6 +20,7 @@ const ProductList = ({ initialProducts, categories }) => {
     const data = await response.json();
     setProducts(data.products);
   }
+
   return (
     <section>
       <div>
@@ -36,7 +35,7 @@ const ProductList = ({ initialProducts, categories }) => {
         </select>
       </div>
       {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
+        <ProductCard key={product.id} product={product} addToCart={addToCart} />
       ))}
     </section>
   );

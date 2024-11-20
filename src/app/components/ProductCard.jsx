@@ -41,9 +41,6 @@ const ProductCard = ({ product, addToCart }) => {
           <div>Antal på lager: {stock} stk.</div>
         </Link>
         <PrimaryButton btntext="Tilføj til kurv" onClick={handleAddToCart} theme={"white"} />
-        {/* <div className="">
-          <button>Tilføj til kurv</button>
-        </div> */}
       </div>
     </>
   );
